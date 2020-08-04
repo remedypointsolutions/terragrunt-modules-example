@@ -26,3 +26,9 @@ variable "vpc_cidr_block" {
   description = "AWS VPC CIDR Block"
   default     = "192.168.0.0/16"
 }
+
+variable "enable_public_lb" {
+  type = bool
+  description = "Enable/Disable public lb in the network"
+  default = false
+}
