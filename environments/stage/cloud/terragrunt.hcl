@@ -12,5 +12,7 @@ terraform {
 }
 
 inputs = merge(local.globals, {
+  availability_zones = ["us-east-1a", "us-east-1b"]
 
+  enable_public_lb = false
 })
