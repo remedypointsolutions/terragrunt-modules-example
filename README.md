@@ -6,11 +6,10 @@ It almost the same as our previous infrastructure, but allows to update single r
 
 ## How to use
 
-0. Load AWS Credentials in active Terminal session;
-1. Go to `environments/stage` directory;
-
-2.1 Run `terragrunt plan-all` to provise all infrastructure modules;
-2.2 Go to specific directory (for example, `ecs`), run `terragrunt plan` to provise only `ecs` part of the infrastructure;
+* Load AWS Credentials in active Terminal session;
+* Go to `environments/stage` directory;
+* (1) Run `terragrunt plan-all` to provise all infrastructure modules;
+* (2) Go to specific directory (for example, `ecs`), run `terragrunt plan` to provise only `ecs` part of the infrastructure;
 
 ## Future development
 
