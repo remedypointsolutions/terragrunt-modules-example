@@ -1,11 +1,6 @@
-variable "name" {
-  description = "The ECS cluster name this will launching instances for."
+variable "name_preffix" {
   type        = string
-}
-
-variable "environment" {
-  description = "Environment tag."
-  type        = string
+  description = "Name preffix for resources on AWS"
 }
 
 variable "image_id" {
@@ -30,22 +25,28 @@ variable "subnet_ids" {
   type        = list(string)
 }
 
+variable "enable_autoscaling" {
+  type = bool
+  description = "Enable autoscaling of number of ec2 whithin the cluster."
+  default = false
+}
+
 variable "desired_capacity" {
   description = "Desired instance count."
   type        = string
-  default     = 2
+  default     = 3
 }
 
 variable "max_size" {
   description = "Maxmimum instance count."
   type        = string
-  default     = 4
+  default     = 5
 }
 
 variable "min_size" {
   description = "Minimum instance count."
   type        = string
-  default     = 2
+  default     = 1
 }
 
 variable "use_AmazonEC2ContainerServiceforEC2Role_policy" {

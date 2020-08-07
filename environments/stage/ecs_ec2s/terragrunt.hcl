@@ -1,4 +1,4 @@
-#environments/stage/ec2/terragrunt.hcl
+#environments/stage/ecs_lc/terragrunt.hcl
 include {
   path = find_in_parent_folders()
 }
@@ -8,27 +8,18 @@ locals {
 }
 
 terraform {
-  source = "../../../modules/ec2"
+  source = "../../../modules/ecs_lc"
 }
 
 dependency "cloud" {
   config_path = "../cloud"
   mock_outputs = {
-    public_subnets_ids = ["temporary-dummy-name"]
-    vpc_id = "temporary-vpc-id"
-  }
-}
-
-dependency "ecs" {
-  config_path = "../ecs"
-  mock_outputs = {
-    name = "temporary-dummy-name"
+    public_subnets_ids = []
+    vpc_id = ""
   }
 }
 
 inputs = merge(local.globals, {
-  name = dependency.ecs.outputs.name
-
   vpc_id = dependency.cloud.outputs.vpc_id
   subnet_ids = dependency.cloud.outputs.public_subnets_ids
 })
