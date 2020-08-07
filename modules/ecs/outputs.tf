@@ -1,3 +1,3 @@
 output "name" {
-    value = aws_ecs_cluster.main.name
+  value = aws_ecs_cluster.main.name
 }

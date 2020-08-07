@@ -28,7 +28,7 @@ variable "vpc_cidr_block" {
 }
 
 variable "enable_public_lb" {
-  type = bool
+  type        = bool
   description = "Enable/Disable public lb in the network"
-  default = false
+  default     = false
 }

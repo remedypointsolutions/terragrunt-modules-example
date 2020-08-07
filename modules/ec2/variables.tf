@@ -11,7 +11,7 @@ variable "environment" {
 variable "image_id" {
   description = "Amazon ECS-Optimized AMI."
   type        = string
-  default = "ami-007cd1678c6286a05"
+  default     = "ami-007cd1678c6286a05"
 }
 
 variable "instance_type" {
